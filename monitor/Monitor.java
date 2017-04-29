@@ -103,9 +103,11 @@ public class Monitor {
 			port = Integer.parseInt(str[1]);
 		try {
 			socket = new Socket(addr, port);
-			socket.close();
+			
 		} catch (IOException e) {
 			return false;
+		}finally{
+			socket.close();
 		}
 		return true;
 	}
